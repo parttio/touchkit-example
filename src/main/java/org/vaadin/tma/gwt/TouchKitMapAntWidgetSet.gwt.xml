@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<module>
+    <!--
+        This file is automatically updated based on new dependencies by the
+        goal "vaadin:update-widgetset".
+    -->
+
+    <!-- Inherit DefaultWidgetSet -->
+    <inherits name="com.vaadin.DefaultWidgetSet" />
+
+    <inherits name="org.vaadin.touchkit.gwt.TouchKitWidgetSet" />
+
+    <inherits name="org.vaadin.addon.leaflet.Widgetset" />
+
+    <inherits name="org.vaadin.addon.vleafletproj.Widgetset" />
+    
+    <generate-with class="org.vaadin.tma.gwt.OptimizedConnectorBundleLoaderFactory">
+      <when-type-assignable class="com.vaadin.client.metadata.ConnectorBundleLoader" />
+    </generate-with>
+    
+<!--    <collapse-all-properties />
+    
+    <add-linker name="sso" />-->
+
+</module>
