@@ -8,7 +8,9 @@ import com.vaadin.shared.ui.Connect.LoadStyle;
 
 /**
  * This class is automatically built with the debug dialog in browser 
- * (triggered by ?debug query parameter).
+ * (triggered by ?debug query parameter). Currently it lists all connector used
+ * in the app, but most optimal setup contains just the widgets on the initial
+ * screen.
  * 
  * @author mstahv
  */
@@ -51,8 +53,9 @@ public class OptimizedConnectorBundleLoaderFactory extends
         } else {
             // Loads all other connectors immediately after the initial view has
             // been rendered
-            return LoadStyle.NONE;
-            //return LoadStyle.DEFERRED;
+            return LoadStyle.DEFERRED;
+            // NONE makes overall downloaded size smaller, but makes development bit harder as non-listend widgets would not work at all
+            // return LoadStyle.NONE;
         }
     }
 }

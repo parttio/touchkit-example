@@ -15,12 +15,11 @@ public class TouchKitMapAntUIProvider extends UIProvider {
                 .toLowerCase().contains("mobile");
         boolean mobileParameter = event.getRequest().getParameter("mobile") != null;
 
-        // Uncomment these lines if you have a UI optimised for desktop
-//        if (overrideMobileUA() || mobileUserAgent || mobileParameter) {
+        if (overrideMobileUA() || mobileUserAgent || mobileParameter) {
             return TouchKitMapAntTouchKitUI.class;
-//        } else {
-//            return TouchKitMapAntFallbackUI.class;
-//        }
+        } else {
+            return TouchKitMapAntFallbackUI.class;
+        }
     }
 
     private boolean overrideMobileUA() {
