@@ -59,12 +59,7 @@ public class MapView extends NavigationView {
 "        ], \"origin\":[-548576.0, 8388608]}");
         lProjectionMap.setCustomTmsCrs(customProjection);
 
-        String tileTemplate = "http://wmts.mapant.fi/wmts.php?z={z}&x={x}&y={y}";
-        if(Page.getCurrent().getWebBrowser().isIOS() || Page.getCurrent().getWebBrowser().isSafari()) {
-            // IOS geolocation API is very strict on mixed content stuff, use proxy
-            // on a secure server instead
-            tileTemplate = "https://virit.in/mapantproxy/wmts.php?z={z}&x={x}&y={y}";
-        }
+        String tileTemplate = "https://wmts.mapant.fi/wmts.php?z={z}&x={x}&y={y}";
         LTileLayer lTileLayer = new LTileLayer(tileTemplate);
         lTileLayer.setAttributionString("<a href=\"http://www.maanmittauslaitos.fi/en/digituotteet/laser-scanning-data\" target=\"_blank\">Laser scanning</a> and <a href=\"http://www.maanmittauslaitos.fi/en/digituotteet/topographic-database\" target=\"_blank\">topographic</a> data provided by the <a href=\"http://www.maanmittauslaitos.fi/en\" target=\"_blank\">National Land Survey of Finland</a> under the <a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\">Creative Commons license</a>.");
         
