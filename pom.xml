@@ -10,8 +10,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <vaadin.version>8.2.0</vaadin.version>
-        <vaadin.version.maven>8.2.0</vaadin.version.maven>
+        <vaadin.version>8.3.0</vaadin.version>
+        <vaadin.version.maven>8.3.0</vaadin.version.maven>
     </properties>
     <repositories>
         <repository>
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.vaadin.touchkit</groupId>
             <artifactId>touchkit</artifactId>
-            <version>5.0.0.beta2</version>
+            <version>5.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -123,20 +123,13 @@
                 <artifactId>vaadin-maven-plugin</artifactId>
                 <version>${vaadin.version.maven}</version>
                 <configuration>
-                    <webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets
-                    </webappDirectory>
-                    <hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets
-                    </hostedWebapp>
-                    <extraJvmArgs>-Xmx1g -Xss4024k</extraJvmArgs>
                     <noServer>true</noServer>
                     <!-- Remove draftCompile when project is ready -->
-                    <draftCompile>false</draftCompile>
+                    <draftCompile>true</draftCompile>
                     <compileReport>false</compileReport>
-                    <style>OBF</style>
-                    <persistentunitcachedir>${project.build.directory}</persistentunitcachedir>
-                    <deploy>${project.build.directory}/gwt-deploy</deploy>
+                    <style>PRETTY</style>
                     <runTarget>http://localhost:8080/tma</runTarget>
-                    <extraJvmArgs>-Xmx1024M -Xss4024k -XX:MaxPermSize=128m</extraJvmArgs>
+                    <extraJvmArgs>-Xmx2g -Xss4024k</extraJvmArgs>
                     <modules>
                         <module>org.vaadin.tma.gwt.TouchKitMapAntWidgetSet</module>
                     </modules>
@@ -167,9 +160,9 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.8.v20121106</version>
+                <version>9.4.8.v20171121</version>
                 <configuration>
                     <webApp>
                         <contextPath>/tma</contextPath>

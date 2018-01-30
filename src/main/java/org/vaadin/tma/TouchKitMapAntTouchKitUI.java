@@ -5,6 +5,7 @@ import org.vaadin.tma.gwt.client.*;
 
 import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
@@ -23,6 +24,7 @@ import org.vaadin.touchkit.ui.TabBarView;
 @SuppressWarnings("serial")
 @Widgetset("org.vaadin.tma.gwt.TouchKitMapAntWidgetSet")
 @Theme("touchkit")
+@Title("TKMapAnt")
 // Cache static application files so as the application can be started
 // and run even when the network is down.
 @CacheManifestEnabled
